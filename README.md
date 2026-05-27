@@ -1,6 +1,6 @@
 # Task Tracker CLI
 
-A command-line task management application built in Java. Supports creating, updating, deleting, and filtering tasks by status, all persisted locally without any external dependencies.
+A command-line task management application built in Java. Supports creating, updating, deleting, and filtering tasks by status, all coded locally without any external dependencies.
 
 Built as part of the [roadmap.sh backend project track](https://roadmap.sh/projects/task-tracker) to apply OOP principles and practice real-world CLI design.
 
@@ -8,14 +8,14 @@ Built as part of the [roadmap.sh backend project track](https://roadmap.sh/proje
 
 ## Architecture
 
-The project is structured across 4 classes with clear separation of concerns:
+The project is structured across 4 classes with clear separation:
 
 | Class | Responsibility |
 |---|---|
-| `Main` | Entry point — parses CLI arguments and routes commands |
-| `TaskManager` | Business logic — handles all task operations |
-| `JsonHandler` | Persistence layer — reads and writes tasks to local storage |
-| `Task` | Data model — represents a task and its properties |
+| `Main` | Entry point: parses CLI arguments and routes commands |
+| `TaskManager` | Business logic: handles all task operations |
+| `JsonHandler` | Persistence layer: reads and writes tasks to local storage |
+| `Task` | Data model: represents an individual task object and its properties |
 
 ---
 
