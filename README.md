@@ -1,26 +1,72 @@
 # Task Tracker CLI
 
-This is a command line app to track and edit tasks on a to-do list that you create.
+A command-line task management application built in Java. Supports creating, updating, deleting, and filtering tasks by status — all persisted locally without any external dependencies.
 
-## How to compile
-`javac -d bin src/roadmapProject1/*.java`
+Built as part of the [roadmap.sh backend project track](https://roadmap.sh/projects/task-tracker-cli) to apply OOP principles and practice real-world CLI design.
 
-## Commands
+---
 
-adding a task: `java -cp bin roadmapProject1.Main add "<description>"`
+## Architecture
 
-listing all tasks: `java -cp bin roadmapProject1.Main list`
+The project is structured across 4 classes with clear separation of concerns:
 
-updating a task's description: `java -cp bin roadmapProject1.Main update <task id> "<new description>"`
+| Class | Responsibility |
+|---|---|
+| `Main` | Entry point — parses CLI arguments and routes commands |
+| `TaskManager` | Business logic — handles all task operations |
+| `JsonHandler` | Persistence layer — reads and writes tasks to local storage |
+| `Task` | Data model — represents a task and its properties |
 
-updating a task's status to be in-progress: `java -cp bin roadmapProject1.Main mark-in-progress <task id>`
+---
 
-updating a task's status to be done: `java -cp bin roadmapProject1.Main mark-done <task id>`
+## Features
 
-deleting a task: `java -cp bin roadmapProject1.Main delete <task id>`
+- Add tasks with a description
+- Update task descriptions
+- Delete tasks by ID
+- Mark tasks as `todo`, `in-progress`, or `done`
+- Filter and list tasks by status
+- Tasks persist between sessions via local file storage
 
-listing tasks according to their status: `java -cp bin roadmapProject1.Main list <status>`
-(valid statuses: todo, in-progress, done)
+---
 
-## Project
-https://roadmap.sh/projects/task-tracker-cli
+## Getting Started
+
+### Compile
+
+```bash
+javac -d bin src/roadmapProject1/*.java
+```
+
+### Usage
+
+```bash
+# Add a task
+java -cp bin roadmapProject1.Main add "<description>"
+
+# List all tasks
+java -cp bin roadmapProject1.Main list
+
+# List by status (todo | in-progress | done)
+java -cp bin roadmapProject1.Main list <status>
+
+# Update a task's description
+java -cp bin roadmapProject1.Main update <id> "<new description>"
+
+# Mark as in-progress
+java -cp bin roadmapProject1.Main mark-in-progress <id>
+
+# Mark as done
+java -cp bin roadmapProject1.Main mark-done <id>
+
+# Delete a task
+java -cp bin roadmapProject1.Main delete <id>
+```
+
+---
+
+## Tech
+
+- Java
+- OOP design principles
+- File-based persistence (no external libraries or databases)
